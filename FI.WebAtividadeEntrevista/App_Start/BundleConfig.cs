@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Optimization;
+using System.Web.Razor.Generator;
 
 namespace FI.WebAtividadeEntrevista
 {
@@ -16,6 +17,10 @@ namespace FI.WebAtividadeEntrevista
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
+
+            //Add script para colocar máscara - Bianca
+            bundles.Add(new ScriptBundle("~/bundles/jquerymask").Include(
+                        "~/Scripts/jquery.mask*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
@@ -46,6 +51,10 @@ namespace FI.WebAtividadeEntrevista
 
             bundles.Add(new ScriptBundle("~/bundles/altBeneficiarios").Include(
                       "~/Scripts/Beneficiarios/FI.AltBeneficiarios.js"));
+
+            //Arquivo para colocar a máscara no input - Bianca
+            bundles.Add(new ScriptBundle("~/bundles/mascara").Include(
+                      "~/Scripts/Mascara/Mascara.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

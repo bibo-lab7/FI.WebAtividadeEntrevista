@@ -56,6 +56,41 @@ namespace FI.AtividadeEntrevista.DAL
             return ds.Tables[0].Rows.Count > 0;
         }
 
+        internal bool VerificarValidade(string CPF)
+        {
+            // Remove caracteres não numéricos
+            CPF = new string(CPF.Where(char.IsDigit).ToArray());
+
+            // Verifica se o CPF tem 11 dígitos
+            if (CPF.Length != 11 || CPF.All(c => c == CPF[0]))
+                return false;
+
+            // Calcula o primeiro dígito verificador
+            int soma = 0;
+            for (int i = 0; i < 9; i++)
+            {
+                soma += (CPF[i] - '0') * (10 - i);
+            }
+
+            int primeiroDigito = (soma * 10) % 11;
+            if (primeiroDigito == 10 || primeiroDigito == 11)
+                primeiroDigito = 0;
+
+            // Calcula o segundo dígito verificador
+            soma = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                soma += (CPF[i] - '0') * (11 - i);
+            }
+
+            int segundoDigito = (soma * 10) % 11;
+            if (segundoDigito == 10 || segundoDigito == 11)
+                segundoDigito = 0;
+
+            // Verifica se os dígitos verificadores estão corretos
+            return CPF[9] - '0' == primeiroDigito && CPF[10] - '0' == segundoDigito;
+        }
+
         internal List<Beneficiario> Pesquisa(int iniciarEm, int quantidade, string campoOrdenacao, bool crescente, out int qtd)
         {
             List<System.Data.SqlClient.SqlParameter> parametros = new List<System.Data.SqlClient.SqlParameter>();

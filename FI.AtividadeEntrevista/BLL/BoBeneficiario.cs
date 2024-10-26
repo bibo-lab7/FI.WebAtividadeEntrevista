@@ -78,5 +78,11 @@ namespace FI.AtividadeEntrevista.BLL
             DAL.DaoBeneficiario bene = new DAL.DaoBeneficiario();
             return bene.VerificarExistencia(CPF);
         }
+
+        public bool VerificarValidade(string CPF)
+        {
+            DAL.DaoBeneficiario bene = new DAL.DaoBeneficiario();
+            return bene.VerificarValidade(CPF);
+        }
     }
 }

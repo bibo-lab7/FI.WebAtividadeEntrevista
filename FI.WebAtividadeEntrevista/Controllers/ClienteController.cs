@@ -36,6 +36,11 @@ namespace WebAtividadeEntrevista.Controllers
                 Response.StatusCode = 400;
                 return Json(string.Join(Environment.NewLine, erros));
             }
+            //Verifica se o CPF é válido - Bianca
+            else if (!bo.VerificarValidade(model.CPF))
+            {
+                return Json("CPF já cadastrado");
+            }
             //Verifica se já existe o CPF cadastrado - Bianca 
             else if (bo.VerificarExistencia(model.CPF))
             {
