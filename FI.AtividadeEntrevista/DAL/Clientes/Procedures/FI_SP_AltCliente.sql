@@ -8,6 +8,8 @@
     @LOGRADOURO    VARCHAR (500),
     @EMAIL         VARCHAR (2079),
     @TELEFONE      VARCHAR (15),
+	--Add campo CPF - Bianca
+	@CPF		   VARCHAR (15),
 	@Id           BIGINT
 AS
 BEGIN
@@ -21,6 +23,8 @@ BEGIN
 		CIDADE = @CIDADE, 
 		LOGRADOURO = @LOGRADOURO, 
 		EMAIL = @EMAIL, 
-		TELEFONE = @TELEFONE
+		TELEFONE = @TELEFONE,
+		--Edit campo CPF - Bianca
+		CPF = @CPF
 	WHERE Id = @Id
 END

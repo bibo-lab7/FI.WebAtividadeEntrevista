@@ -67,5 +67,13 @@ namespace WebAtividadeEntrevista.Models
         /// </summary>
         public string Telefone { get; set; }
 
+        /// <summary>
+        /// Telefone
+        /// </summary>
+        /// Add campo CPF - Bianca
+
+        [Required] 
+        public string CPF { get; set; }
+
     }    
 }

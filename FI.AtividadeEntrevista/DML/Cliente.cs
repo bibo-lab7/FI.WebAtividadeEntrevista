@@ -59,6 +59,12 @@ namespace FI.AtividadeEntrevista.DML
         /// <summary>
         /// Telefone
         /// </summary>
-        public string Telefone { get; set; }        
-    }    
+        public string Telefone { get; set; }
+
+        //Add campo CPF - Bianca
+        /// <summary>
+        /// Telefone
+        /// </summary>
+        public string CPF { get; set; }
+    }
 }

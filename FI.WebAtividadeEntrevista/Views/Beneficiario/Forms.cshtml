@@ -1,0 +1,45 @@
+﻿@* Bianca Teste *@
+<div id="modalBeneficiario" class="modal">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+            </div>
+            <div class="modal-body">
+                <form id="formCadastroBeneficiario" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Nome">Nome:</label>
+                                <input required="required" type="text" class="form-control" id="Nome" name="Nome" placeholder="Ex.: João" maxlength="50">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="CPF">CPF:</label>
+                                <input required="required" type="text" class="form-control" id="CPF" name="CPF" placeholder="Ex.: 999.999.999-99" maxlength="15">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-sm btn-success">Salvar</button>
+                                @Html.ActionLink("Voltar", "Index", "Beneficiario", new { }, new { @class = "btn btn-sm btn-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
