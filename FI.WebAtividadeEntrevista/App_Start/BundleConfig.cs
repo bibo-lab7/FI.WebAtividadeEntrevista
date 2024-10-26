@@ -54,7 +54,7 @@ namespace FI.WebAtividadeEntrevista
 
             //Arquivo para colocar a máscara no input - Bianca
             bundles.Add(new ScriptBundle("~/bundles/mascara").Include(
-                      "~/Scripts/Mascara/Mascara.js"));
+                      "~/Scripts/Mascara/Mascara.js")); 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

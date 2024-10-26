@@ -63,7 +63,7 @@ namespace FI.AtividadeEntrevista.DAL
 
             return ds.Tables[0].Rows.Count > 0;
         }
-
+         
         internal bool VerificarValidade(string CPF)
         {
             // Remove caracteres não numéricos
