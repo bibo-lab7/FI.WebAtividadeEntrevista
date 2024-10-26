@@ -39,7 +39,7 @@ namespace WebAtividadeEntrevista.Controllers
             //Verifica se o CPF é válido - Bianca
             else if (!bo.VerificarValidade(model.CPF))
             {
-                return Json("CPF já cadastrado");
+                return Json("CPF inválido");
             }
             //Verifica se já existe o CPF cadastrado - Bianca 
             else if (bo.VerificarExistencia(model.CPF))
